@@ -8,7 +8,7 @@ export const data = {
             "id": 2,
             "question": "What incredibly common thing have you never done?"
         },
-        /*{
+        {
             "id": 3,
             "question": "What has taken you the longest to get good or decent at?"
         },
@@ -39,6 +39,6 @@ export const data = {
         {
             "id": 10,
             "question": "What website or app doesn’t exist, but you really wish it did?"
-        }*/
+        }
     ]
 }

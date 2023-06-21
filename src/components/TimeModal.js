@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import '../css/Time_Modal.css'
+import '../css/timeModal.css';
 
-const Time_Modal = ({setTimeFreq, setTimer, setTimeFreqModalFlag}) => {
+const TimeModal = ({setTimeFreq, setTimer, setTimeFreqModalFlag}) => {
     //State to store the changed time frequency that is set by the user.
     const [minutes, setMinutes] = useState()
 
@@ -31,4 +31,4 @@ const Time_Modal = ({setTimeFreq, setTimer, setTimeFreqModalFlag}) => {
     )
 }
 
-export default Time_Modal
+export default TimeModal

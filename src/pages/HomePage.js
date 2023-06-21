@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Hat from '../images/hat.png';
-import "../css/Home_page.css"
-import Time_Modal from './Time_Modal';
-import Game_Rules from './Game_Rules';
+import "../css/homePage.css"
+import TimeModal from '../components/TimeModal';
+import GameRules from '../components/GameRules';
 import {data} from "../data/data.js";
 
-const Home_page = () => {
+const HomePage = () => {
     //State to handle the timing functionality(setInterval/clearInterval).
     const myInterval = useRef(null)
 
@@ -37,31 +37,19 @@ const Home_page = () => {
         }
         setTimer(timeFreq)
         if(questions.length > 0) {
-            pickNewQuestion(questions, data.questions)
+            pickNewQuestion(questions)
         } else {
-            //setDisplayQuestion("You have answered all the questions!")
-            //let temp = [...questions, data.questions]
-            //setQuestions(data.questions)
-            pickNewQuestion(questions, data.questions)
+            pickNewQuestion(data.questions)
         }
     }
 
-    const pickNewQuestion = (questions, data) => {
-        if (questions.length > 0) {
-            let randomNumber = Math.floor(Math.random() * (questions.length - 1));
-            const newQuestions = questions.filter((element, index) => {
-                return randomNumber !== index;
-            });
-            setDisplayQuestion(questions[randomNumber].question)
-            setQuestions(newQuestions)
-        } else {
-            let randomNumber = Math.floor(Math.random() * (data.length - 1));
-            const newQuestions = data.filter((element, index) => {
-                return randomNumber !== index;
-            });
-            setDisplayQuestion(data[randomNumber].question)
-            setQuestions(newQuestions)
-        }
+    const pickNewQuestion = (questions) => {
+        let randomNumber = Math.floor(Math.random() * (questions.length - 1));
+        const newQuestions = questions.filter((element, index) => {
+            return randomNumber !== index;
+        });
+        setDisplayQuestion(questions[randomNumber].question)
+        setQuestions(newQuestions)
         myInterval.current = setInterval(startTimer, 1000)
     }
 
@@ -96,16 +84,16 @@ const Home_page = () => {
 
     return (
         <div className='alignment'>
-            {gameRulesFlag && <Game_Rules setGameRulesFlag = {setGameRulesFlag} />}
+            {gameRulesFlag && <GameRules setGameRulesFlag = {setGameRulesFlag} />}
             <h1>The Magic Hat</h1>
             <h2 className='textInputStyle'>Click on the hat to get a new question!</h2>
             <img src={Hat} alt="Girl in a jacket" width="400" height="400" onClick={displayNewQuestion}/>
             <button className='buttonStyle' onClick={openTimeFreqModal}>Change Frequency</button>
-            {timeFreqModalFlag && <Time_Modal setTimeFreq = {setTimeFreq} setTimer = {setTimer} setTimeFreqModalFlag = {setTimeFreqModalFlag} />}
+            {timeFreqModalFlag && <TimeModal setTimeFreq = {setTimeFreq} setTimer = {setTimer} setTimeFreqModalFlag = {setTimeFreqModalFlag} />}
             <p className='timerStyle'>{displayTime}</p>
             <p className='textInputStyle'>{displayQuestion}</p>
         </div>
     )
 }
 
-export default Home_page;
+export default HomePage;

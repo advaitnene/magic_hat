@@ -1,7 +1,7 @@
 import React from 'react'
-import '../css/Game_Rules.css'
+import '../css/gameRules.css'
 
-const Game_Rules = ({setGameRulesFlag}) => {
+const GameRules = ({setGameRulesFlag}) => {
     return (
         <div className='modalStyle'>
             <div className='modalContent'>
@@ -12,12 +12,12 @@ const Game_Rules = ({setGameRulesFlag}) => {
                     <li>You will need to answer a question before the timer ends.</li>
                     <li>You can change the timer value if you need additional time.</li>
                 </ul>
-                {/*<h2>Very important note:</h2>
-                <p className='modalListStyle'>Don't forget to have fun !</p>*/}
+                <h2>Very important note:</h2>
+                <p className='modalListStyle'>Don't forget to have fun !</p>
                 <button className='modalButton' onClick={() => setGameRulesFlag(false)}>Let's start!</button>
             </div>
         </div>
     )
 }
 
-export default Game_Rules
+export default GameRules
