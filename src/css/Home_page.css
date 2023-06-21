@@ -1,0 +1,27 @@
+.alignment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttonStyle {
+    background-color: #24a0ed;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    font-family: cursive;
+    font-size: 20px;
+    border: none;
+}
+
+.textInputStyle {
+    font-size: 25px;
+    border-radius: 10px;
+    font-family: cursive;
+}
+
+.timerStyle {
+    font-size: 30px;
+}

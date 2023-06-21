@@ -1,0 +1,40 @@
+.modalStyle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modalButton {
+    background-color: #24a0ed;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    font-family: cursive;
+    font-size: 16px;
+    border: none;
+}
+
+.modalListStyle {
+    font-size: 20px;
+    font-family: cursive;
+}
